@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تولید متن ماه قمری با سن هلال</title>
+</head>
+<body>
+
+<h2>تولید متن ماه قمری با سن هلال</h2>
+
+<form id="moonForm">
+  <label>ماه و سال هجری قمری:</label>
+  <input type="text" id="hijriMonth" placeholder="مثلاً شعبان ۱۴۴۷">
+
+  <label>تاریخ مقارنه:</label>
+  <div style="display:flex; gap:5px;">
+    <input type="number" id="conjDay" placeholder="روز" min="1" max="31">
+    <input type="number" id="conjMonth" placeholder="ماه" min="1" max="12">
+    <input type="number" id="conjYear" placeholder="سال" min="1000" max="1500">
+  </div>
+
+  <label>ساعت مقارنه (۲۴ ساعته، مثال: 15:13):</label>
+  <input type="text" id="conjunctionTime" placeholder="مثلاً 15:13">
+
+  <label>غروب خورشید روز مقارنه:</label>
+  <input type="text" id="sunset0" placeholder="مثلاً 17:21">
+
+  <label>زوال شفق روز مقارنه:</label>
+  <input type="text" id="twilight0" placeholder="مثلاً 18:08">
+
+  <label>غروب ماه روز مقارنه:</label>
+  <input type="text" id="moonset0" placeholder="مثلاً 17:55">
+
+  <label>غروب خورشید روز اول پس از مقارنه:</label>
+  <input type="text" id="sunset1" placeholder="مثلاً 17:21">
+
+  <label>زوال شفق روز اول:</label>
+  <input type="text" id="twilight1" placeholder="مثلاً 18:08">
+
+  <label>غروب ماه روز اول:</label>
+  <input type="text" id="moonset1" placeholder="مثلاً 18:59">
+
+  <label>غروب خورشید روز دوم پس از مقارنه:</label>
+  <input type="text" id="sunset2" placeholder="مثلاً 17:21">
+
+  <label>زوال شفق روز دوم:</label>
+  <input type="text" id="twilight2" placeholder="مثلاً 18:08">
+
+  <label>غروب ماه روز دوم:</label>
+  <input type="text" id="moonset2" placeholder="مثلاً 18:59">
+
+  <label>توضیح قاعده روایی:</label>
+  <textarea id="ruleExplanation" placeholder="مثلاً طبق قاعده روایی، قمر در روز ..."></textarea>
+
+  <label>ابتدای ماه طبق تقویم روایی:</label>
+  <input type="text" id="monthStart" placeholder="مثلاً سه‌شنبه ۳۰ دی ۱۴۰۴">
+
+  <label>پایان ماه:</label>
+  <input type="text" id="monthEnd" placeholder="مثلاً سه‌شنبه ۲۸ بهمن ۱۴۰۴">
+
+  <label>تعداد روز ماه:</label>
+  <input type="text" id="monthDays" placeholder="مثلاً ۲۹ روزه">
+
+  <div style="margin-top:10px;">
+    <button type="button" onclick="generateText()">تولید متن</button>
+    <button type="button" onclick="copyText()">کپی متن</button>
+    <button type="button" onclick="clearOutput()">پاک کردن متن خروجی</button>
+    <button type="button" onclick="downloadImage()">دانلود به صورت عکس</button>
+    <button type="button" onclick="shareTelegram()">انتشار در تلگرام</button>
+    <button type="button" onclick="clearStorage()">پاک کردن ورودی‌ها</button>
+  </div>
+</form>
+
+<h2>متن خروجی:</h2>
+<br>
+<div id="outputContainer"></div>
+<div class="programmer-section" id="programmer-container">
+  برنامه‌نویس: ابوالقاسم اسلامی
+</div>
+<br>
+</body>
+</html>
